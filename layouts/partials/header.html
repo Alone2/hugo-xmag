@@ -7,6 +7,15 @@
     <title>{{ if eq ($.Scratch.Get "Title") .Site.Title }}{{ .Site.Title }}{{ else }}{{ ($.Scratch.Get "Title") }} | {{ .Site.Title }}{{ end }}</title>
     <link rel="stylesheet" href="{{ "/css/style.css" | relURL }}" />
     <link rel="stylesheet" href="{{ "/css/fonts.css" | relURL }}" />
+    {{ if .Params.title }}
+        <meta name="description" content="{{ .Params.description }}"/>
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@luegenpresse_ch" />
+        <meta property="og:url" content="{{ .RelPermalink | absURL }}" />
+        <meta property="og:title" content="{{ .Params.title }}" />
+        <meta property="og:description" content="{{ .Params.description }}" />
+        <meta property="og:image" content="{{ .Params.thumbnail | absURL }}" />
+        {{ end }}
     {{ partial "head_custom.html" . }}
   </head>
 
