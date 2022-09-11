@@ -1,5 +1,9 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
 body {
-  margin: 0;
+  margin: 0 0 150px;
   line-height: 1.5em;
   background: #fafafa;
 }
@@ -87,6 +91,13 @@ article { padding: 1em; }
 .footer {
   background: #666;
   padding: 1em 0;
+}
+footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    overflow: hidden;
 }
 .footer, .footer a { color: #fff; }
 .copyright, .copyright a { color: #ccc; }
