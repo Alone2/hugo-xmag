@@ -8,7 +8,7 @@ body {
   background: #fafafa;
 }
 .header div, .container, .copyright, .menu {
-  max-width: 1100px;
+  /* max-width: 1100px; */
   margin: auto;
   padding: 0 15px;
 }
@@ -21,32 +21,97 @@ main { margin-bottom: 15px; }
 
 /* header and footer areas */
 .header {
-  border-top: 5px solid #666;
-  border-bottom: 4px double #666;
+  border-top: 0.7em solid #000;
+  /*border-bottom: 4px double #666;*/
+  box-shadow: 0 0 8px #ccc;
   text-align: center;
-  padding: 15px 0 5px;
+  padding: 7px 0 5px;
 }
 .head-meta, .menu {
   display: flex;
   justify-content: space-between;
 }
-.header, .list section, article { background: #fff; }
-.banner { font-size: 4em; }
+.header, article { background: #fff; }
+/* .header, .list section, article { background: #fff; }*/
+.banner { 
+    font-size: 4em; 
+}
+.banner img {
+    max-height: 1.5em;
+}
 .banner .text {
   display: block;
   line-height: 1em;
 }
 .list {
   display: flex;
+  align-content: stretch;
+  justify-content: space-evenly;
+  width: 100%;
   flex-wrap: wrap;
   margin-left: -15px;
+  cursor: pointer;
+}
+.list a  {
+    background-color: rgba(255,255,255,1);
+    padding: 0.5px 5px;
+    border-style: none;
+    box-shadow: 0.5em 0 0 rgba(255,255,255,1),-0.5em 0 0 rgba(255,255,255,1);
+    box-decoration-break: clone;
+    /* border-radius: 0.2em; */
+}
+.date-author  {
+    background-color: rgba(0,0,0,0.7);
+    color: rgba(255,255,255,1);
+    border-style: solid;
+    border-color: rgba(255,255,255,0);
+    border-top-width: 0.3em;
+    border-bottom-width: 0em;
+    border-right-width: 0em;
+    border-left-width: 0.3em;
+    border-radius: 0.5em 0em 0em 0em;
+    padding: 2px 5px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.list h1  {
+    background: rgba(255,255,255,0.0);
+    margin-top: 0px;
+    border-color: rgba(255,255,255,0);
+    border-width: 1em;
+    /* border-top-width: 0.5em; */
+    padding-bottom: 1em;
+    border-top-width: 0em;
+    border-bottom-width: 0em;
+    border-left-width: 0.5em;
+    border-style: solid;
+}
+.list .categories {
+    background: rgba(255,255,255,1);
+    border-color: rgba(255,255,255,0);
+    border-width: 1em;
+    border-left-width: 0.2em;
+    border-bottom-width: 0.5em;
+    border-top-width: 0.7em;
+    border-style: solid;
+}
+.categories a  {
+    padding-bottom: 0.8em;
 }
 .list section {
-  flex: 1 0 350px;
+  /* flex: 1 0 350px; */
+  /* min-width: 23.8em; */
+  min-width: 20.0em;
+  flex: 1 0 100%;
   box-sizing: border-box;
   box-shadow: 0 0 8px #ccc;
   margin: 1em 0 0 15px;
-  padding: 1em;
+  /* padding: 1em; */
+  /* background-size: cover; */
+  border-radius: 0.2em;
+  position: relative;
+  aspect-ratio: 4/3;
   overflow-x: hidden;
 }
 @media (max-width: 380px) {
@@ -62,7 +127,7 @@ main { margin-bottom: 15px; }
   /* .article-list h1:hover { white-space: inherit; } */
 }
 @media (min-width: 1080px) {
-  .list section { max-width: calc(33.33333% - 15px); }
+  .list section { max-width: calc(25% - 15px); }
 }
 .article-list a, .banner a { color: #000; }
 .categories a {
@@ -72,11 +137,19 @@ main { margin-bottom: 15px; }
   color: #666;
 }
 h1 a:hover { text-decoration: underline; }
-.article-list h1 { margin: .2em auto .2em 0; }
-article { padding: 1em; }
+/* .article-list h1 { margin: .2em auto .2em 0; } */
+article { 
+ padding: 1em; 
+ margin-top: 1em; 
+ margin-bottom: 1em; 
+ box-shadow: 0 4px 4px 2px #ccc;
+}
 .article-meta {
   text-decoration: none;
   background: #eee;
+  border-color: #000;
+  border-bottom-width: 0.4em;
+  border-bottom-style: solid;
   padding: 5px;
   border-radius: 5px;
 }
@@ -89,7 +162,7 @@ article { padding: 1em; }
 .pagination li, .terms li { display: inline; }
 .pagination a { padding: 0 .2em; }
 .footer {
-  background: #666;
+  background: #000;
   padding: 1em 0;
 }
 footer {
@@ -151,12 +224,14 @@ th, td { padding: 5px; }
 tr:nth-child(even) { background: #eee }
 
 .thumbnail {
-  height: 5.1em;
-  width: 6.8em;
+  height: 100%;
+  width: 100%;
   float: left;
+  position: relative;
   overflow: hidden;
+  z-index: -10;
   margin: 5px 8px 5px 0;
-  box-shadow: 0 0 8px #666;
+  /* box-shadow: 0 0 8px #666; */
 }
 .thumbnail img {
   width: 100%;
@@ -183,4 +258,7 @@ tr:nth-child(even) { background: #eee }
 .footnotes hr {
   width: 50%;
   margin-left: 0;
+}
+.blobber {
+ font-size: 0.3em;
 }

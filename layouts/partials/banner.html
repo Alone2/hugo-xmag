@@ -4,4 +4,9 @@
 <img src="{{ relURL .src }}" alt="{{ .alt }}" />
 {{ else }}{{ (replaceRE "(&[A-Z]) (fr;)" "$1$2" (replaceRE "([A-Z])" "&$1 fr;" (upper .Site.Title))) | safeHTML }}
 {{ end }}</a>
+
+<span class="blobber">
+<!-- Powered by -->
+<!-- <img src="https://blobber.ch/static/media/logo.7364c2d3bd51499251ec0331863dfa32.svg" /> -->
+</span>
 </div>
